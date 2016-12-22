@@ -56,6 +56,7 @@ public final class Injector {
      *             invalid id value, or you haven't called setContentView() on your Activity.
      */
     public void inject() {
+    	Field[] Arr = mActivity.getClass().getDeclaredFields();
         for (Field field : mActivity.getClass().getDeclaredFields()) {
             for (Annotation annotation : field.getAnnotations()) {
                 if (annotation.annotationType().equals(InjectView.class)) {

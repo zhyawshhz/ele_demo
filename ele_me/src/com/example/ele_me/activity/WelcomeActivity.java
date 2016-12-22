@@ -14,8 +14,9 @@ import com.example.ele_me.util.InjectView;
 import com.example.ele_me.util.Injector;
 
 public class WelcomeActivity extends Activity {
-	@InjectView(R.id.welcome_start_order)
-	private TextView start;
+	
+	private TextView register_btn;
+	private TextView login_btn;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -24,12 +25,25 @@ public class WelcomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.welcome);
-		Injector.get(this).inject();//init views
-		start.setOnClickListener(new OnClickListener() {
+		
+		register_btn = (TextView)findViewById(R.id.btn_regist);
+		login_btn = (TextView)findViewById(R.id.btn_login);
+		
+		register_btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent (WelcomeActivity.this,HomePageActivity.class);			
+				Intent intent = new Intent (WelcomeActivity.this,RegisterPageActivity.class);			
+				startActivity(intent);			
+				finish();
+			}
+		});
+		
+		login_btn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent (WelcomeActivity.this,LoginActivity.class);			
 				startActivity(intent);			
 				finish();
 			}
