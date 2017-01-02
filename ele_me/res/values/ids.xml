@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="id" name="cbRead" />
+    <item type="id" name="cbTourist" />
+    <item type="id" name="cbPlayGame" />
+    <item type="id" name="spCity" />
     <item type="id" name="register_phone" />
     <item type="id" name="register_password" />
     <item type="id" name="btn_to_register" />
